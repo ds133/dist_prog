@@ -29,16 +29,14 @@
             <div class="col-md-8">
               {% block content %}{% endblock %}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="navBar">
                 <div class="content-section">
                     <h3>Sidebar</h3>
-                    <p class='text-muted'>Work in progress
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">------</li>
-                            <li class="list-group-item list-group-item-light">------</li>
-                            <li class="list-group-item list-group-item-light">------</li>
-                            <li class="list-group-item list-group-item-light">------</li>
-                        </ul>
+                        <ol class="list-group">
+                            {% for post in posts %}
+                            <li class="list-group-item list-group-item-light"><a href="#{{ post.ID }}">{{ post.title }}</a></li>
+                            {% endfor %}
+                        </ol>
                     </p>
                 </div>
             </div>
